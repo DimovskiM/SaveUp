@@ -1,5 +1,5 @@
 
 
 #VUE
-node_modules/vue/
-webapp/node_modules/
+/node_modules/vue/
+/webapp/node_modules/
