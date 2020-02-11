@@ -2,30 +2,29 @@
 
 namespace App\Http\Controllers;
 
-use App\Category;
-use Exception;
+use Goutte\Client;
+use Symfony\Component\HttpClient\HttpClient;
+use App\Contracts\IScraper;
+use App\Product;
 
 class ProductsController extends Controller
 {
+
+    private $scraper;
     /**
      * Create a new controller instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(IScraper $scraper)
     {
-        //
+        $this->scraper = $scraper;
     }
 
     public function index() {
-        try {
-
-            $a = Category::all();
-        }
-        catch (Exception $e){
-            $a = $e;
-        }
-        return response()->json($a);
+       $this->scraper->ScrapeWebsites();
+       
+       return Product::all();
     }
 
     //

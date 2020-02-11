@@ -1,5 +1,10 @@
 <?php
 
+use App\Contracts\IScraper;
+use App\Services\Scraper;
+use Symfony\Component\HttpClient\HttpClient;
+use Goutte\Client;
+
 require_once __DIR__.'/../vendor/autoload.php';
 
 (new Laravel\Lumen\Bootstrap\LoadEnvironmentVariables(
@@ -45,6 +50,10 @@ $app->singleton(
     Illuminate\Contracts\Console\Kernel::class,
     App\Console\Kernel::class
 );
+
+$app->singleton(IScraper::class, function($app) {
+    return new Scraper(new Client(HttpClient::create()));
+});
 
 /*
 |--------------------------------------------------------------------------
