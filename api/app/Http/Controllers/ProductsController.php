@@ -22,9 +22,7 @@ class ProductsController extends Controller
     }
 
     public function index() {
-       $this->scraper->ScrapeWebsites();
-       
-       return Product::all();
+        return response()->json(Product::with('prices')->get());
     }
 
     //
