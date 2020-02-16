@@ -1,9 +1,9 @@
 import * as axios from 'axios';
 
-const apiUrl = "http://localhost:8000/"
+const apiUrl = "http://localhost:8000/api"
 
 export const getProducts = async function() {
-    const response = await axios.get(apiUrl);
+    const response = await axios.get(`${apiUrl}/products`);
 
     const products = response.data.map(x => {
         const product = {
@@ -20,7 +20,7 @@ export const getProducts = async function() {
 }
 
 export const getProduct = async function(id) {
-    const response = await axios.get(`${apiUrl}${id}`);
+    const response = await axios.get(`${apiUrl}/products/${id}`);
 
     const product = response.data;
 

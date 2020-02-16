@@ -11,5 +11,5 @@
 |
 */
 
-$router->get('/', "ProductsController@index");
-$router->get('/{id}', "ProductsController@getById");
+$router->get('/api/products', "ProductsController@index");
+$router->get('/api/products/{id}', "ProductsController@getById");

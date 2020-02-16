@@ -7,7 +7,7 @@
                 </div>
                 <div class="col-md-6">
                     <p class="lead">{{product.name}} </p>
-                    <p class="lead"> {{product.currentPrice | moneyFilter }} </p>
+                    <p class="lead"> Current Price : <b>{{product.currentPrice | moneyFilter }}</b> </p>
                     <a :href="product.productPage" class="lead"> Product Page </a>
                 </div>
             </div>

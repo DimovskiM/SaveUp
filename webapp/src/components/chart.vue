@@ -33,7 +33,7 @@ export default {
             labels: this.chartLabels,
             datasets: [
                 {
-                    label: 'Prices',
+                    label: 'Price',
                     data: this.chartDataSet,    
                 }]
             },

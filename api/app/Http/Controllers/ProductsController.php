@@ -6,6 +6,7 @@ use Goutte\Client;
 use Symfony\Component\HttpClient\HttpClient;
 use App\Contracts\IScraper;
 use App\Product;
+use Illuminate\Http\Request;
 
 class ProductsController extends Controller
 {
@@ -22,7 +23,7 @@ class ProductsController extends Controller
     }
 
     public function index() {
-        return response()->json(Product::with('prices')->get());
+        return response()->json(Product::with('prices')->orderBy('updated_at', 'DESC')->get());
     }
 
     public function getById($id) {
