@@ -5,8 +5,8 @@
     </div>
     <router-view />
     <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:400,500,700,400italic|Material+Icons">
-    <footer class="row"> 
-      <div class="col-md-12 border-top border-primary bg-dark ">
+    <footer class="row text-center"> 
+      <div class="col-md-12 border-top border-primary bg-dark">
         <small class="text-white"> 
           © Mihajlo Dimovski - 2020
         </small>
@@ -22,3 +22,8 @@ export default {
   }
 }
 </script>
+<style>
+#app {
+  width: 99%;
+}
+</style>

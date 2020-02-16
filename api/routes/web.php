@@ -12,3 +12,4 @@
 */
 
 $router->get('/', "ProductsController@index");
+$router->get('/{id}', "ProductsController@getById");

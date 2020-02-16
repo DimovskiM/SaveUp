@@ -1,10 +1,9 @@
 <template>
     <div class="navbar navbar-dark bg-dark row">
-        <a class="navbar-brand" href="#"> SaveUp - Save While Shopping </a>
+        <router-link :to="{name: 'home'}" class="navbar-brand col-md-12"> SaveUp - Save While Shopping </router-link>
     </div>
 </template>
 <script>
-import MdNav from "vue-material/dist/components";
 export default {
     name: 'Header',
     components: {

@@ -21,13 +21,11 @@ class Scraper implements IScraper {
     }
 
     public function ScrapeWebsites() {
-
         $scraper = $this->client->request('GET', $this->anhochWebsite);
         $scraper->filter('a[href]')->each(function ($url) {
             $pageUrl = $url->attr('href');
             print $pageUrl . '<br\>';
             if (strpos($pageUrl, $this->anhochWebsiteSecure) !== false) {
-                error_log('hi');
                 $this->scrapeAnhoch($pageUrl);
             }
         });
@@ -63,7 +61,6 @@ class Scraper implements IScraper {
 
     private function scrapeAnhoch($url) {
         $scraper = $this->client->request('GET', $url); 
-        error_log('hello');
         $scraper->filter('li.span3')->each(function ($item) {
             try {
                     $itemName = $item->filter('.product-name')->attr('title');

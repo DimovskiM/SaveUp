@@ -25,5 +25,9 @@ class ProductsController extends Controller
         return response()->json(Product::with('prices')->get());
     }
 
+    public function getById($id) {
+        return response()->json(Product::find($id)->load('prices'));
+    }
+
     //
 }
